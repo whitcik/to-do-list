@@ -1,0 +1,10 @@
+@import "../../constants/SCSSVariables.scss";
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  height: $footerHeight;
+  line-height: $footerHeight;
+  font-size: 12px;
+}
