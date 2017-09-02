@@ -1,7 +1,9 @@
+@import "../../constants/SCSSVariables.scss";
+
 .header {
   background-color: #222;
   padding: 20px;
   color: #fff;
   text-align: center;
-  height: 120px;
+  height: $headerHeight
 }

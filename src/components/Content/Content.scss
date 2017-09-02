@@ -1,0 +1,7 @@
+@import "../../constants/SCSSVariables.scss";
+
+.content {
+  height: calc(100vh - #{$headerHeight} - #{$footerHeight});
+  width: 100%;
+  overflow: auto;
+}
