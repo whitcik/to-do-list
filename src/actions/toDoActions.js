@@ -6,3 +6,17 @@ export const addToDo = (name) => {
     name
   }
 }
+
+export const markAsDone = (id) => {
+  return {
+    type: actionTypes.MARK_AS_DONE,
+    id
+  }
+}
+
+export const removeToDo = (id) => {
+  return {
+    type: actionTypes.REMOVE_TO_DO,
+    id
+  }
+}

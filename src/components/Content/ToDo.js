@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { markAsDone, removeToDo } from 'actions/toDoActions';
 import ToDoItem from './ToDoItem';
 
 class ToDo extends Component {
@@ -14,7 +15,11 @@ class ToDo extends Component {
   generateItems() {
 
     return this.getCorrectItems().map(todo => {
-      return <ToDoItem key={todo.id} {...todo}  />
+      return <ToDoItem
+                key={todo.id}
+                {...todo}
+                markAsDone={this.props.markAsDone}
+                removeToDo={this.props.removeToDo} />
     });
   }
 
@@ -38,7 +43,7 @@ function mapStateToProps(store) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    ...bindActionCreators({}, dispatch)
+    ...bindActionCreators({ markAsDone, removeToDo }, dispatch)
   }
 }
 
