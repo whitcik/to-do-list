@@ -1,4 +1,7 @@
 import React, { PureComponent } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { addToDo } from 'actions/toDoActions';
 import { ENTER_KEY_CODE } from 'constants/keyCodes';
 
 class ToDoInput extends PureComponent {
@@ -13,7 +16,10 @@ class ToDoInput extends PureComponent {
   handleEnter = (e) => {
     const { value } = this.state;
     if (e.key === ENTER_KEY_CODE && value.length) {
-      console.log('Action', this.state.value);
+      this.props.addToDo(value);
+      this.setState({
+        value: ''
+      })
     }
   }
 
@@ -22,7 +28,7 @@ class ToDoInput extends PureComponent {
       value: e.target.value
     })
   }
-  
+
   render() {
     return (
       <div className="to-do-input">
@@ -39,4 +45,11 @@ class ToDoInput extends PureComponent {
   }
 }
 
-export default ToDoInput;
+
+function mapDispatchToProps(dispatch) {
+  return {
+    ...bindActionCreators({ addToDo }, dispatch)
+  }
+}
+
+export default connect(null, mapDispatchToProps)(ToDoInput);
