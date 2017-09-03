@@ -1,11 +1,12 @@
 import React from 'react';
 import './Content.scss';
+import ToDoInput from './ToDoInput';
 
 const Content = () => {
   return (
     <div className="content">
       <div className="container">
-        <h1>Content</h1>
+        <ToDoInput />
       </div>
     </div>
   );

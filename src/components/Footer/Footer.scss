@@ -1,7 +1,7 @@
 @import "../../constants/SCSSVariables.scss";
 
 .footer {
-  background-color: #222;
+  background-color: $appColor;
   color: #fff;
   text-align: center;
   height: $footerHeight;
