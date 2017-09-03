@@ -18,6 +18,7 @@
   height: calc(100vh - #{$headerHeight} - #{$footerHeight});
   width: 100%;
   overflow: auto;
+  position: relative;
   .to-do-input {
     animation: modalAnimate 0.3s;
     .input {
@@ -26,7 +27,7 @@
       width: 100%;
       font-size: 30px;
       line-height: 35px;
-      height: 70px;
+      height: $inputHeight;
       text-align: center;
       padding: 10px;
       background: transparent;
@@ -38,4 +39,26 @@
       }
     }
   }
+  .todo-list {
+    width: 50%;
+    float: left;
+    padding: 10px;
+
+    .title {
+      text-align: center;
+      color: #4093d8;
+    }
+  }
+
+  &:after {
+      position: absolute;
+      top: $inputHeight + 30px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: calc(100% - #{$inputHeight} - 50px);
+      width: 1px;
+      background-color: $appColor;
+      content: '';
+    }
 }
