@@ -8,8 +8,8 @@ const Content = () => {
     <div className="content">
       <div className="container">
         <ToDoInput />
-        <ToDo title="To do" />
-        <ToDo title="Done" done />
+        <ToDo title="To do" done={false} />
+        <ToDo title="Done" done={true} />
       </div>
     </div>
   );
