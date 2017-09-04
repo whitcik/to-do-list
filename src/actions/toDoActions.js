@@ -20,3 +20,10 @@ export const removeToDo = (id) => {
     id
   }
 }
+
+export const setToDoList = (toDoList) => {
+  return {
+    type: actionTypes.SET_TO_DO_LIST,
+    toDoList
+  }
+}

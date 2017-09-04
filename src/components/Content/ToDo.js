@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { markAsDone, removeToDo } from 'actions/toDoActions';
+import { markAsDone, removeToDo, setToDoList } from 'actions/toDoActions';
+import localStorageHelper from 'utils/localStorageHelper';
 import ToDoItem from './ToDoItem';
 
 class ToDo extends Component {
+
+  componentDidMount() {
+    const localStorageToDoList = localStorageHelper.getToDoList();
+
+    if(localStorageToDoList){
+      this.props.setToDoList(localStorageToDoList);
+    }
+  }
 
   getCorrectItems() {
     const { done, toDoList } = this.props;
@@ -43,7 +52,7 @@ function mapStateToProps(store) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    ...bindActionCreators({ markAsDone, removeToDo }, dispatch)
+    ...bindActionCreators({ markAsDone, removeToDo, setToDoList }, dispatch)
   }
 }
 
