@@ -7,10 +7,10 @@ const ToDoItem = (props) => {
       {!props.done &&
         <button
           onClick={() => props.markAsDone(props.id)}
-          className="done">Done</button>}
+          className="button done">Done</button>}
       <button 
         onClick={() => props.removeToDo(props.id)}
-        className="delete">Remove</button>                        
+        className="button remove">Remove</button>                        
     </li>
   );
 };
